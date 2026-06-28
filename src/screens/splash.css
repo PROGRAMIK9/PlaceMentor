@@ -1,0 +1,216 @@
+/* ========== Splash Screen ========== */
+.splash {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--gradient-hero);
+  z-index: var(--z-splash);
+  overflow: hidden;
+}
+
+/* Floating particles */
+.splash-particles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.splash-particle {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  animation: particleFloat linear infinite;
+}
+
+.splash-particle:nth-child(1) {
+  width: 80px;
+  height: 80px;
+  top: 10%;
+  left: 8%;
+  animation-duration: 7s;
+  animation-delay: 0s;
+}
+
+.splash-particle:nth-child(2) {
+  width: 40px;
+  height: 40px;
+  top: 65%;
+  right: 12%;
+  animation-duration: 5s;
+  animation-delay: 0.5s;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.splash-particle:nth-child(3) {
+  width: 60px;
+  height: 60px;
+  bottom: 20%;
+  left: 15%;
+  animation-duration: 8s;
+  animation-delay: 1s;
+}
+
+.splash-particle:nth-child(4) {
+  width: 24px;
+  height: 24px;
+  top: 30%;
+  right: 20%;
+  animation-duration: 4s;
+  animation-delay: 0.3s;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.splash-particle:nth-child(5) {
+  width: 50px;
+  height: 50px;
+  top: 75%;
+  left: 55%;
+  animation-duration: 6s;
+  animation-delay: 0.8s;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.splash-particle:nth-child(6) {
+  width: 36px;
+  height: 36px;
+  top: 15%;
+  right: 35%;
+  animation-duration: 9s;
+  animation-delay: 1.2s;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.splash-particle:nth-child(7) {
+  width: 20px;
+  height: 20px;
+  bottom: 35%;
+  right: 8%;
+  animation-duration: 5.5s;
+  animation-delay: 0.6s;
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.splash-particle:nth-child(8) {
+  width: 70px;
+  height: 70px;
+  bottom: 10%;
+  right: 30%;
+  animation-duration: 10s;
+  animation-delay: 0.2s;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+@keyframes particleFloat {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+    opacity: 0.6;
+  }
+  25% {
+    transform: translateY(-20px) scale(1.05);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateY(-10px) scale(0.95);
+    opacity: 1;
+  }
+  75% {
+    transform: translateY(-25px) scale(1.02);
+    opacity: 0.7;
+  }
+}
+
+/* Logo container */
+.splash-logo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-lg);
+  animation: splashBounceIn 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  opacity: 0;
+  z-index: 2;
+}
+
+@keyframes splashBounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.08);
+  }
+  70% {
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.splash-icon {
+  font-size: 4rem;
+  filter: drop-shadow(0 4px 20px rgba(0, 0, 0, 0.15));
+  animation: splashIconPulse 2s ease-in-out infinite;
+}
+
+@keyframes splashIconPulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.06);
+  }
+}
+
+.splash-title {
+  font-size: var(--font-4xl);
+  font-weight: 800;
+  color: #FFFFFF;
+  letter-spacing: -0.5px;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.15);
+}
+
+.splash-tagline {
+  font-size: var(--font-base);
+  color: rgba(255, 255, 255, 0.75);
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  animation: splashFadeInDelay 0.6s ease-out 0.5s forwards;
+  opacity: 0;
+}
+
+@keyframes splashFadeInDelay {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Glow ring behind logo */
+.splash-glow {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 70%);
+  animation: splashGlow 2s ease-in-out infinite;
+  z-index: 1;
+}
+
+@keyframes splashGlow {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.3);
+    opacity: 1;
+  }
+}

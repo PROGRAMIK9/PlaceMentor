@@ -1,0 +1,358 @@
+/* ================================================
+   Profile Screen Styles
+   ================================================ */
+
+.profile-screen {
+  animation: fadeIn 0.4s ease-out;
+  padding-top: 0 !important;
+}
+
+/* ---------- Hero header ---------- */
+.profile-hero {
+  position: relative;
+  text-align: center;
+  padding: var(--space-3xl) var(--space-base) var(--space-xl);
+  margin: 0 calc(-1 * var(--space-base));
+  margin-bottom: var(--space-lg);
+  overflow: hidden;
+}
+
+.profile-hero__bg {
+  position: absolute;
+  inset: 0;
+  background: var(--gradient-primary);
+  opacity: 0.1;
+  border-radius: 0 0 var(--radius-xl) var(--radius-xl);
+}
+
+.profile-hero__content {
+  position: relative;
+  z-index: 1;
+}
+
+/* Avatar */
+.profile-avatar {
+  width: 88px;
+  height: 88px;
+  border-radius: var(--radius-full);
+  background: var(--gradient-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto var(--space-md);
+  font-size: var(--font-2xl);
+  font-weight: 800;
+  color: var(--text-on-primary);
+  box-shadow: var(--shadow-primary);
+  animation: scaleIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes scaleIn {
+  from { transform: scale(0.7); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.profile-name {
+  font-size: var(--font-2xl);
+  font-weight: 800;
+  margin-bottom: 2px;
+}
+
+.profile-college {
+  font-size: var(--font-base);
+  color: var(--text-secondary);
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.profile-branch {
+  font-size: var(--font-sm);
+  color: var(--text-tertiary);
+  margin-bottom: var(--space-base);
+}
+
+.profile-edit-btn {
+  padding: var(--space-sm) var(--space-lg);
+  font-size: var(--font-sm);
+}
+
+/* ---------- Stats ---------- */
+.profile-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-sm);
+  margin-bottom: var(--space-xl);
+}
+
+.profile-stat-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: var(--space-base) var(--space-sm);
+  animation: slideUp 0.4s ease-out both;
+}
+
+.profile-stat-emoji {
+  font-size: var(--font-lg);
+  margin-bottom: 2px;
+}
+
+.profile-stat-value {
+  font-size: var(--font-lg);
+  font-weight: 800;
+  color: var(--text);
+}
+
+.profile-stat-label {
+  font-size: var(--font-xs);
+  color: var(--text-secondary);
+  font-weight: 500;
+  text-align: center;
+}
+
+/* ---------- Section ---------- */
+.profile-section {
+  margin-bottom: var(--space-xl);
+}
+
+.profile-section__title {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: var(--font-md);
+  font-weight: 700;
+  margin-bottom: var(--space-md);
+  color: var(--text);
+}
+
+.profile-section__title svg {
+  color: var(--primary);
+}
+
+/* ---------- Academic info ---------- */
+.profile-academic-card {
+  padding: 0;
+  overflow: hidden;
+}
+
+.profile-academic-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-md) var(--space-base);
+}
+
+.profile-academic-row + .profile-academic-row {
+  border-top: 1px solid var(--border);
+}
+
+.profile-academic-label {
+  font-size: var(--font-base);
+  color: var(--text-secondary);
+}
+
+.profile-academic-value {
+  font-size: var(--font-base);
+  font-weight: 700;
+  color: var(--text);
+}
+
+/* ---------- Skills ---------- */
+.profile-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+
+/* ---------- Projects ---------- */
+.profile-projects {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.profile-project-card {
+  padding: var(--space-base);
+}
+
+.profile-project-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-sm);
+}
+
+.profile-project-card__header h3 {
+  font-size: var(--font-base);
+  font-weight: 700;
+}
+
+.profile-project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: var(--space-sm);
+}
+
+.profile-project-desc {
+  font-size: var(--font-sm);
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+/* ---------- Resume ---------- */
+.profile-resume-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.profile-resume-info {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.profile-resume-icon {
+  color: var(--primary);
+}
+
+.profile-resume-info h4 {
+  font-size: var(--font-base);
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+
+.profile-resume-date {
+  font-size: var(--font-sm);
+  color: var(--text-tertiary);
+}
+
+.profile-resume-actions {
+  display: flex;
+  gap: var(--space-xs);
+}
+
+/* ---------- Certificates ---------- */
+.profile-certificates {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.profile-cert-card {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-md) var(--space-base);
+}
+
+.profile-cert-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-sm);
+  background: var(--warning-bg);
+  color: #E17055;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.profile-cert-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.profile-cert-info h4 {
+  font-size: var(--font-base);
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.profile-cert-info span {
+  font-size: var(--font-sm);
+  color: var(--text-secondary);
+}
+
+.profile-cert-link {
+  color: var(--text-tertiary);
+  flex-shrink: 0;
+}
+
+/* ---------- Social links ---------- */
+.profile-socials {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.profile-social-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-md) var(--space-base);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  cursor: pointer;
+}
+
+.profile-social-item:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-sm);
+}
+
+.profile-social-icon {
+  color: var(--primary);
+  flex-shrink: 0;
+}
+
+.profile-social-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.profile-social-label {
+  display: block;
+  font-size: var(--font-sm);
+  font-weight: 600;
+  color: var(--text);
+}
+
+.profile-social-value {
+  display: block;
+  font-size: var(--font-sm);
+  color: var(--text-secondary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.profile-social-ext {
+  color: var(--text-tertiary);
+  flex-shrink: 0;
+}
+
+/* ---------- Bottom actions ---------- */
+.profile-actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  margin-top: var(--space-2xl);
+}
+
+.profile-logout-btn {
+  background: var(--error-bg);
+  color: var(--error);
+}
+
+.profile-logout-btn:hover {
+  background: var(--error);
+  color: white;
+}

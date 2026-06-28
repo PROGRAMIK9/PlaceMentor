@@ -1,0 +1,189 @@
+/* ========== Signup Screen ========== */
+.signup {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: var(--space-3xl) var(--space-xl) var(--space-2xl);
+  background: var(--bg);
+  animation: fadeIn 0.4s ease-out;
+}
+
+/* Header */
+.signup-header {
+  margin-bottom: var(--space-2xl);
+  animation: slideUp 0.5s ease-out;
+}
+
+.signup-header-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-md);
+  background: var(--gradient-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  margin-bottom: var(--space-lg);
+  box-shadow: var(--shadow-primary);
+}
+
+.signup-heading {
+  font-size: var(--font-3xl);
+  font-weight: 800;
+  color: var(--text);
+  margin-bottom: var(--space-xs);
+}
+
+.signup-subheading {
+  font-size: var(--font-base);
+  color: var(--text-secondary);
+}
+
+/* Form */
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-base);
+  animation: slideUp 0.5s ease-out 0.15s backwards;
+}
+
+.signup-input-group {
+  position: relative;
+}
+
+.signup-input-group label {
+  display: block;
+  font-size: var(--font-sm);
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: var(--space-xs);
+}
+
+.signup-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.signup-input-wrapper .input-icon {
+  position: absolute;
+  left: 14px;
+  color: var(--text-tertiary);
+  pointer-events: none;
+  transition: color var(--transition-fast);
+}
+
+.signup-input-wrapper input,
+.signup-input-wrapper select {
+  width: 100%;
+  padding: var(--space-md) var(--space-base);
+  padding-left: 44px;
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text);
+  font-size: var(--font-base);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.signup-input-wrapper select {
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23B2BEC3' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 40px;
+}
+
+.signup-input-wrapper input:focus,
+.signup-input-wrapper select:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px var(--primary-bg);
+}
+
+.signup-input-wrapper input::placeholder {
+  color: var(--text-tertiary);
+}
+
+/* Two-column row */
+.signup-row {
+  display: flex;
+  gap: var(--space-md);
+}
+
+.signup-row .signup-input-group {
+  flex: 1;
+}
+
+/* Password toggle */
+.signup-password-toggle {
+  position: absolute;
+  right: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-xs);
+  color: var(--text-tertiary);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.signup-password-toggle:hover {
+  color: var(--text-secondary);
+  background: var(--surface-alt);
+}
+
+/* Submit */
+.signup-submit {
+  width: 100%;
+  padding: var(--space-base) var(--space-xl);
+  background: var(--gradient-primary);
+  color: var(--text-on-primary);
+  font-size: var(--font-md);
+  font-weight: 700;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-primary);
+  transition: all var(--transition-base);
+  margin-top: var(--space-sm);
+  position: relative;
+  overflow: hidden;
+}
+
+.signup-submit::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0);
+  transition: background var(--transition-fast);
+}
+
+.signup-submit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 28px rgba(108, 92, 231, 0.35);
+}
+
+.signup-submit:active::after {
+  background: rgba(0, 0, 0, 0.08);
+}
+
+/* Footer */
+.signup-footer {
+  margin-top: auto;
+  padding-top: var(--space-2xl);
+  text-align: center;
+  font-size: var(--font-base);
+  color: var(--text-secondary);
+}
+
+.signup-footer a {
+  color: var(--primary);
+  font-weight: 700;
+  transition: opacity var(--transition-fast);
+}
+
+.signup-footer a:hover {
+  opacity: 0.8;
+}

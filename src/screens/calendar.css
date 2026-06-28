@@ -1,0 +1,309 @@
+/* ================================================
+   Calendar Screen Styles
+   ================================================ */
+
+.calendar-screen {
+  animation: fadeIn 0.4s ease-out;
+}
+
+/* ---------- Header ---------- */
+.calendar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-lg);
+}
+
+.calendar-header__left {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.calendar-header__icon {
+  color: var(--primary);
+}
+
+.calendar-header__left h1 {
+  font-size: var(--font-xl);
+  font-weight: 800;
+}
+
+.calendar-header__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.today-badge {
+  font-size: var(--font-sm);
+  font-weight: 700;
+  color: var(--primary);
+}
+
+/* ---------- Month nav ---------- */
+.calendar-month-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-base);
+  margin-bottom: var(--space-base);
+}
+
+.calendar-month-label {
+  font-size: var(--font-md);
+  font-weight: 700;
+  min-width: 160px;
+  text-align: center;
+}
+
+/* ---------- View toggle ---------- */
+.calendar-toggle {
+  display: flex;
+  background: var(--surface-alt);
+  border-radius: var(--radius-full);
+  padding: 3px;
+  margin-bottom: var(--space-lg);
+}
+
+.calendar-toggle__btn {
+  flex: 1;
+  padding: var(--space-sm) var(--space-base);
+  border-radius: var(--radius-full);
+  font-size: var(--font-sm);
+  font-weight: 600;
+  color: var(--text-secondary);
+  transition: all var(--transition-base);
+}
+
+.calendar-toggle__btn.active {
+  background: var(--surface);
+  color: var(--primary);
+  box-shadow: var(--shadow-sm);
+}
+
+/* ---------- Week strip ---------- */
+.calendar-week-strip {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-xs);
+  margin-bottom: var(--space-xl);
+  padding: var(--space-sm) 0;
+}
+
+.calendar-day {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: var(--space-sm) 0;
+  width: 44px;
+  border-radius: var(--radius-md);
+  background: transparent;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all var(--transition-base);
+  position: relative;
+}
+
+.calendar-day:hover {
+  background: var(--surface-alt);
+}
+
+.calendar-day__label {
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.calendar-day__number {
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-full);
+  font-size: var(--font-base);
+  font-weight: 700;
+  transition: all var(--transition-base);
+}
+
+.calendar-day--today .calendar-day__number {
+  background: var(--gradient-primary);
+  color: var(--text-on-primary);
+  box-shadow: var(--shadow-primary);
+}
+
+.calendar-day--selected:not(.calendar-day--today) .calendar-day__number {
+  background: var(--primary-bg);
+  color: var(--primary);
+}
+
+.calendar-day--today,
+.calendar-day--selected {
+  color: var(--text);
+}
+
+.calendar-day__dot {
+  width: 4px;
+  height: 4px;
+  border-radius: var(--radius-full);
+  background: var(--primary);
+}
+
+/* ---------- Section title ---------- */
+.calendar-section-title {
+  font-size: var(--font-md);
+  font-weight: 700;
+  margin-bottom: var(--space-md);
+  color: var(--text);
+}
+
+/* ---------- Event cards ---------- */
+.calendar-events__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  margin-bottom: var(--space-2xl);
+}
+
+.event-card {
+  display: flex;
+  gap: var(--space-md);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: var(--space-base);
+  border-left: 4px solid var(--primary);
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+  animation: slideUp 0.4s ease-out both;
+  cursor: pointer;
+}
+
+.event-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.event-card--primary {
+  border-left-color: var(--primary);
+}
+.event-card--accent {
+  border-left-color: var(--accent);
+}
+.event-card--success {
+  border-left-color: var(--success);
+}
+.event-card--warning {
+  border-left-color: var(--warning);
+}
+
+.event-card__time-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  min-width: 64px;
+  padding-top: 2px;
+  color: var(--text-secondary);
+  font-size: var(--font-sm);
+  font-weight: 600;
+}
+
+.event-card__body {
+  flex: 1;
+  min-width: 0;
+}
+
+.event-card__title {
+  font-size: var(--font-base);
+  font-weight: 700;
+  margin-bottom: var(--space-xs);
+  color: var(--text);
+}
+
+.event-card__meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+}
+
+.event-card__duration {
+  font-size: var(--font-sm);
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.event-card__type {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: var(--font-sm);
+  color: var(--text-tertiary);
+  font-weight: 500;
+}
+
+/* ---------- Upcoming ---------- */
+.calendar-upcoming__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.upcoming-card {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: var(--space-md) var(--space-base);
+  cursor: pointer;
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+  animation: slideUp 0.4s ease-out both;
+}
+
+.upcoming-card:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-sm);
+}
+
+.upcoming-card__day {
+  min-width: 64px;
+  font-size: var(--font-sm);
+  font-weight: 700;
+  color: var(--primary);
+  text-align: center;
+  padding: var(--space-xs) var(--space-sm);
+  background: var(--primary-bg);
+  border-radius: var(--radius-xs);
+}
+
+.upcoming-card__info {
+  flex: 1;
+  min-width: 0;
+}
+
+.upcoming-card__info h4 {
+  font-size: var(--font-base);
+  font-weight: 600;
+  margin-bottom: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.upcoming-card__time {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: var(--font-sm);
+  color: var(--text-secondary);
+}
+
+.upcoming-card__chevron {
+  color: var(--text-tertiary);
+  flex-shrink: 0;
+}

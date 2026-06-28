@@ -1,0 +1,228 @@
+/* ================================================
+   ResumeBuilder Screen Styles
+   ================================================ */
+
+.rb-page {
+  animation: fadeIn 0.4s ease-out;
+}
+
+/* ---------- Status Card ---------- */
+.rb-status {
+  margin-bottom: var(--space-xl);
+}
+
+.rb-status-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  z-index: 1;
+}
+
+.rb-status-info h2 {
+  font-size: var(--font-xl);
+  font-weight: 800;
+  margin-bottom: var(--space-sm);
+}
+
+.rb-status-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+}
+
+.rb-updated {
+  font-size: var(--font-sm);
+  opacity: 0.8;
+}
+
+.rb-preview-btn {
+  background: rgba(255, 255, 255, 0.2) !important;
+  color: white !important;
+  padding: var(--space-sm) var(--space-base);
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: var(--font-sm);
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  backdrop-filter: blur(8px);
+  transition: all var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.rb-preview-btn:hover {
+  background: rgba(255, 255, 255, 0.3) !important;
+}
+
+/* ---------- Action Cards ---------- */
+.rb-actions-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  margin-top: var(--space-md);
+}
+
+.rb-action-card {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-base);
+  animation: slideUp 0.5s ease-out both;
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+}
+
+.rb-action-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.rb-action-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.rb-action-info h4 {
+  font-size: var(--font-base);
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 2px;
+}
+
+.rb-action-info p {
+  font-size: var(--font-sm);
+  color: var(--text-secondary);
+}
+
+.rb-action-arrow {
+  color: var(--text-tertiary);
+  flex-shrink: 0;
+  transition: transform var(--transition-fast);
+}
+
+.rb-action-card:hover .rb-action-arrow {
+  transform: translateX(3px);
+  color: var(--primary);
+}
+
+/* ---------- Templates ---------- */
+.rb-templates-scroll {
+  padding-bottom: var(--space-sm);
+}
+
+.rb-template-card {
+  width: 140px;
+  background: var(--surface);
+  border: 2px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-md);
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.rb-template-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+.rb-template-active {
+  border-color: var(--tpl-accent);
+  box-shadow: 0 0 0 3px var(--tpl-bg);
+}
+
+.rb-template-preview {
+  width: 100%;
+  aspect-ratio: 3/4;
+  background: var(--surface-alt);
+  border-radius: var(--radius-sm);
+  padding: var(--space-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.rb-tpl-header-bar {
+  width: 60%;
+  height: 8px;
+  border-radius: 3px;
+  background: var(--tpl-accent);
+  opacity: 0.7;
+}
+
+.rb-tpl-line {
+  height: 4px;
+  border-radius: 2px;
+  background: var(--border);
+}
+
+.rb-tpl-line-long { width: 100%; }
+.rb-tpl-line-med { width: 70%; }
+.rb-tpl-line-short { width: 45%; }
+
+.rb-tpl-divider {
+  width: 100%;
+  height: 1px;
+  background: var(--border);
+  margin: 2px 0;
+}
+
+.rb-template-name {
+  font-size: var(--font-sm);
+  font-weight: 600;
+  color: var(--text);
+}
+
+/* ---------- Grammar & Style ---------- */
+.rb-quality-cards {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  margin-top: var(--space-md);
+}
+
+.rb-quality-item {
+  padding: var(--space-base);
+}
+
+.rb-quality-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.rb-quality-label {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: var(--font-base);
+  font-weight: 600;
+  color: var(--text);
+}
+
+/* ---------- Download Section ---------- */
+.rb-download-section {
+  margin-bottom: var(--space-3xl);
+}
+
+.rb-download-btns {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  margin-top: var(--space-md);
+}
+
+.rb-dl-btn {
+  width: 100%;
+}

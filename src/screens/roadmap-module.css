@@ -1,0 +1,452 @@
+/* ===== Roadmap Module Screen ===== */
+.rm-screen {
+  min-height: 100vh;
+  background: var(--bg);
+  padding-bottom: 100px;
+  animation: fadeIn 0.35s ease;
+}
+
+/* Header */
+.rm-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--bg);
+  backdrop-filter: blur(12px);
+}
+
+.rm-back-btn,
+.rm-share-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.rm-back-btn:hover,
+.rm-share-btn:hover {
+  background: var(--primary);
+  color: #fff;
+  border-color: var(--primary);
+}
+
+.rm-back-btn:active,
+.rm-share-btn:active {
+  transform: scale(0.92);
+}
+
+.rm-header-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+/* Overview Card */
+.rm-overview-card {
+  margin: 4px 16px 16px;
+  padding: 20px;
+  border-radius: var(--radius-lg);
+  background: var(--gradient-primary);
+  color: #fff;
+  box-shadow: 0 8px 28px rgba(108, 92, 231, 0.3);
+  animation: slideUp 0.5s ease both;
+}
+
+.rm-overview-top {
+  margin-bottom: 16px;
+}
+
+.rm-overview-name {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.rm-overview-count {
+  font-size: 0.82rem;
+  opacity: 0.85;
+}
+
+.rm-overview-progress-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.rm-overview-progress-bar {
+  flex: 1;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.rm-overview-progress-fill {
+  height: 100%;
+  border-radius: 8px;
+  background: #fff;
+  transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+.rm-overview-progress-fill::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.5),
+    transparent
+  );
+  animation: shimmer 2.2s ease infinite;
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.rm-overview-pct {
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+/* Tabs */
+.rm-tabs {
+  display: flex;
+  gap: 4px;
+  padding: 0 16px;
+  margin-bottom: 16px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.rm-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.rm-tab {
+  flex: 1;
+  padding: 10px 12px;
+  border: none;
+  background: var(--surface);
+  color: var(--text-secondary);
+  font-size: 0.82rem;
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  border: 1px solid var(--border);
+}
+
+.rm-tab:hover {
+  color: var(--primary);
+}
+
+.rm-tab-active {
+  background: var(--primary);
+  color: #fff;
+  border-color: var(--primary);
+}
+
+/* Tab Content */
+.rm-tab-content {
+  padding: 0 16px;
+}
+
+/* === Weekly Tasks === */
+.rm-tasks-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.rm-week-card {
+  background: var(--surface);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  animation: slideUp 0.4s ease both;
+  transition: box-shadow 0.2s ease;
+}
+
+.rm-week-card:hover:not(.rm-week-locked) {
+  box-shadow: var(--shadow-sm);
+}
+
+.rm-week-locked {
+  opacity: 0.5;
+}
+
+.rm-week-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  text-align: left;
+  color: var(--text);
+}
+
+.rm-week-header:disabled {
+  cursor: default;
+}
+
+.rm-week-header-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.rm-week-label {
+  display: block;
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.rm-week-title {
+  display: block;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.week-icon-completed {
+  color: var(--success);
+}
+
+.week-icon-inprogress {
+  color: var(--primary);
+}
+
+.week-icon-upcoming {
+  color: var(--text-tertiary);
+}
+
+.week-icon-locked {
+  color: var(--text-tertiary);
+}
+
+.rm-week-chevron {
+  color: var(--text-tertiary);
+  transition: transform 0.3s ease;
+}
+
+.rm-week-chevron-open {
+  transform: rotate(180deg);
+}
+
+/* Tasks inside week */
+.rm-week-tasks {
+  padding: 0 16px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  animation: fadeIn 0.3s ease;
+  border-top: 1px solid var(--border);
+  padding-top: 12px;
+  margin: 0 12px 12px;
+}
+
+.rm-task-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  border-radius: var(--radius-sm);
+  background: var(--surface-alt);
+  transition: background 0.15s ease;
+}
+
+.rm-task-item:hover {
+  background: var(--border);
+}
+
+.rm-task-done-icon {
+  color: var(--success);
+  flex-shrink: 0;
+}
+
+.rm-task-pending-icon {
+  color: var(--text-tertiary);
+  flex-shrink: 0;
+}
+
+.rm-task-name {
+  flex: 1;
+  font-size: 0.84rem;
+  color: var(--text);
+}
+
+.rm-task-name-done {
+  text-decoration: line-through;
+  color: var(--text-tertiary);
+}
+
+.rm-task-progress-badge {
+  padding: 2px 8px;
+  border-radius: 12px;
+  background: rgba(108, 92, 231, 0.1);
+  color: var(--primary);
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+
+/* === Resources === */
+.rm-resources-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.rm-resource-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+  background: var(--surface);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  animation: slideUp 0.4s ease both;
+}
+
+.rm-resource-card:hover {
+  box-shadow: var(--shadow-sm);
+  transform: translateY(-2px);
+}
+
+.rm-resource-card:active {
+  transform: scale(0.98);
+}
+
+.rm-resource-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #fff;
+}
+
+.rm-resource-icon-video {
+  background: linear-gradient(135deg, #FF7675, #fd9a98);
+}
+
+.rm-resource-icon-pdf {
+  background: linear-gradient(135deg, #6C5CE7, #A29BFE);
+}
+
+.rm-resource-icon-link {
+  background: linear-gradient(135deg, #00CEC9, #55EFC4);
+}
+
+.rm-resource-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.rm-resource-title {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 2px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.rm-resource-meta {
+  font-size: 0.74rem;
+  color: var(--text-secondary);
+}
+
+/* === Practice === */
+.rm-practice-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.rm-practice-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 16px;
+  background: var(--surface);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  animation: slideUp 0.4s ease both;
+}
+
+.rm-practice-card:hover {
+  box-shadow: var(--shadow-sm);
+  transform: translateY(-2px);
+}
+
+.rm-practice-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+  min-width: 0;
+}
+
+.rm-practice-title {
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: var(--text);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.rm-difficulty-chip {
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.diff-easy {
+  background: rgba(0, 184, 148, 0.12);
+  color: var(--success);
+}
+
+.diff-medium {
+  background: rgba(253, 203, 110, 0.2);
+  color: #e17d00;
+}
+
+.diff-hard {
+  background: rgba(255, 118, 117, 0.12);
+  color: var(--error);
+}

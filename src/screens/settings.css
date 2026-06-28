@@ -1,0 +1,165 @@
+/* ================================================
+   Settings Screen Styles
+   ================================================ */
+
+.settings-screen {
+  animation: fadeIn 0.4s ease-out;
+}
+
+/* ---------- Header ---------- */
+.settings-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-xl);
+}
+
+.settings-header h1 {
+  font-size: var(--font-xl);
+  font-weight: 800;
+}
+
+/* ---------- Sections ---------- */
+.settings-section {
+  margin-bottom: var(--space-xl);
+}
+
+.settings-section__title {
+  font-size: var(--font-sm);
+  font-weight: 700;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  margin-bottom: var(--space-sm);
+  padding-left: var(--space-xs);
+}
+
+.settings-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+/* ---------- Setting items ---------- */
+.setting-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-base);
+  width: 100%;
+  transition: background var(--transition-fast);
+}
+
+.setting-item + .setting-item {
+  border-top: 1px solid var(--border);
+}
+
+.setting-item--nav {
+  cursor: pointer;
+  text-align: left;
+  color: var(--text);
+}
+
+.setting-item--nav:hover {
+  background: var(--surface-alt);
+}
+
+.setting-item__left {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  font-size: var(--font-base);
+  font-weight: 500;
+  color: var(--text);
+}
+
+.setting-item__icon {
+  color: var(--text-secondary);
+  flex-shrink: 0;
+}
+
+.setting-item__right {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.setting-item__value {
+  font-size: var(--font-sm);
+  color: var(--text-tertiary);
+  font-weight: 500;
+}
+
+.setting-item__chevron {
+  color: var(--text-tertiary);
+}
+
+/* ---------- Toggle switch ---------- */
+.toggle-switch {
+  position: relative;
+  width: 48px;
+  height: 28px;
+  border-radius: var(--radius-full);
+  background: var(--border);
+  padding: 2px;
+  cursor: pointer;
+  transition: background var(--transition-base);
+  flex-shrink: 0;
+}
+
+.toggle-switch--on {
+  background: var(--gradient-primary);
+}
+
+.toggle-switch__knob {
+  display: block;
+  width: 24px;
+  height: 24px;
+  border-radius: var(--radius-full);
+  background: white;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-spring);
+}
+
+.toggle-switch--on .toggle-switch__knob {
+  transform: translateX(20px);
+}
+
+/* ---------- Danger zone ---------- */
+.settings-danger {
+  padding-top: var(--space-sm);
+}
+
+.settings-logout-btn {
+  background: var(--error-bg);
+  color: var(--error);
+  border-radius: var(--radius-md);
+  font-weight: 700;
+  transition: all var(--transition-base);
+  margin-bottom: var(--space-md);
+}
+
+.settings-logout-btn:hover {
+  background: var(--error);
+  color: white;
+}
+
+.settings-delete-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs);
+  width: 100%;
+  padding: var(--space-sm);
+  font-size: var(--font-sm);
+  font-weight: 600;
+  color: var(--error);
+  opacity: 0.8;
+  transition: opacity var(--transition-fast);
+  cursor: pointer;
+}
+
+.settings-delete-link:hover {
+  opacity: 1;
+}

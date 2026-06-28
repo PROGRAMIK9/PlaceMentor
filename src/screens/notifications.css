@@ -1,0 +1,209 @@
+/* ================================================
+   Notifications Screen Styles
+   ================================================ */
+
+.notifications-screen {
+  animation: fadeIn 0.4s ease-out;
+}
+
+/* ---------- Header ---------- */
+.notif-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-lg);
+}
+
+.notif-header__left {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.notif-header__left h1 {
+  font-size: var(--font-xl);
+  font-weight: 800;
+}
+
+.notif-mark-read {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-size: var(--font-sm);
+  font-weight: 600;
+  color: var(--primary);
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--radius-xs);
+  transition: background var(--transition-fast);
+}
+
+.notif-mark-read:hover {
+  background: var(--primary-bg);
+}
+
+/* ---------- Filters ---------- */
+.notif-filters {
+  display: flex;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-lg);
+  padding-bottom: var(--space-xs);
+}
+
+.notif-filter-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: var(--space-sm) var(--space-base);
+  border-radius: var(--radius-full);
+  font-size: var(--font-sm);
+  font-weight: 600;
+  color: var(--text-secondary);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  transition: all var(--transition-base);
+  white-space: nowrap;
+}
+
+.notif-filter-tab:hover {
+  border-color: var(--primary-light);
+  color: var(--primary);
+}
+
+.notif-filter-tab.active {
+  background: var(--gradient-primary);
+  color: var(--text-on-primary);
+  border-color: transparent;
+  box-shadow: var(--shadow-primary);
+}
+
+.notif-filter-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 5px;
+  border-radius: var(--radius-full);
+  font-size: 10px;
+  font-weight: 700;
+  background: rgba(255, 255, 255, 0.25);
+  color: inherit;
+}
+
+.notif-filter-tab:not(.active) .notif-filter-count {
+  background: var(--error);
+  color: white;
+}
+
+/* ---------- Notification list ---------- */
+.notif-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.notif-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-md);
+  padding: var(--space-base);
+  border-radius: var(--radius-md);
+  position: relative;
+  cursor: pointer;
+  transition: background var(--transition-fast);
+  animation: slideUp 0.35s ease-out both;
+}
+
+.notif-item:hover {
+  background: var(--surface-alt);
+}
+
+.notif-item--unread {
+  background: var(--surface);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+}
+
+.notif-item--unread:hover {
+  background: var(--surface-hover);
+}
+
+/* Unread dot */
+.notif-item__dot {
+  position: absolute;
+  top: var(--space-base);
+  right: var(--space-base);
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-full);
+  background: var(--primary);
+  box-shadow: 0 0 0 3px var(--primary-bg);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.3); opacity: 0.7; }
+}
+
+/* Icon circle */
+.notif-item__icon {
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.notif-item__icon--primary {
+  background: var(--primary-bg);
+  color: var(--primary);
+}
+.notif-item__icon--accent {
+  background: var(--accent-bg);
+  color: var(--accent);
+}
+.notif-item__icon--success {
+  background: var(--success-bg);
+  color: var(--success);
+}
+.notif-item__icon--warning {
+  background: var(--warning-bg);
+  color: var(--warning);
+}
+.notif-item__icon--info {
+  background: var(--info-bg);
+  color: var(--info);
+}
+
+/* Body */
+.notif-item__body {
+  flex: 1;
+  min-width: 0;
+}
+
+.notif-item__title {
+  font-size: var(--font-base);
+  font-weight: 700;
+  margin-bottom: 2px;
+  color: var(--text);
+}
+
+.notif-item__desc {
+  font-size: var(--font-sm);
+  color: var(--text-secondary);
+  line-height: 1.45;
+  margin-bottom: var(--space-xs);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.notif-item__time {
+  font-size: var(--font-xs);
+  color: var(--text-tertiary);
+  font-weight: 500;
+}

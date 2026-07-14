@@ -35,7 +35,7 @@ function AppContent() {
   const { user } = useAuth();
   const location = useLocation();
 
-  const hideNavPaths = ['/', '/onboarding', '/login', '/signup', '/role-select'];
+  const hideNavPaths = ['/', '/onboarding', '/login', '/signup', '/role-select', '/ai-assistant'];
   const showNav = user && user.role && !hideNavPaths.includes(location.pathname);
 
   return (

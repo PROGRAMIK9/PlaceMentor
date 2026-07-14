@@ -415,3 +415,236 @@
   color: var(--text);
   margin-bottom: var(--space-base);
 }
+
+/* ================================================
+   MindMentor (Wellbeing Mode) Styles
+   ================================================ */
+
+/* Floating Heart Icon Animation */
+.ai-header-title .heart-icon {
+  color: #00B5B0;
+  animation: float 3.5s ease-in-out infinite;
+}
+
+/* Wellbeing Theme Overrides */
+.ai-assistant.wellbeing .ai-message.bot .ai-message-avatar {
+  background: linear-gradient(135deg, #00B5B0, #55EFC4);
+  color: white;
+  box-shadow: 0 4px 12px rgba(0, 181, 176, 0.25);
+}
+
+.ai-assistant.wellbeing .ai-message.bot .ai-message-bubble {
+  background: rgba(0, 181, 176, 0.08);
+  color: var(--text);
+  border-bottom-left-radius: var(--radius-xs);
+}
+
+.ai-assistant.wellbeing .ai-prompt-chip {
+  background: rgba(0, 181, 176, 0.08);
+  color: #00B5B0;
+}
+
+.ai-assistant.wellbeing .ai-prompt-chip:hover {
+  background: rgba(0, 181, 176, 0.14);
+  border-color: #55EFC4;
+}
+
+.ai-assistant.wellbeing .ai-send-btn {
+  background: linear-gradient(135deg, #00B5B0, #55EFC4);
+  box-shadow: 0 4px 12px rgba(0, 181, 176, 0.25);
+}
+
+.ai-assistant.wellbeing .ai-send-btn:hover {
+  box-shadow: 0 6px 24px rgba(0, 181, 176, 0.35);
+}
+
+.ai-assistant.wellbeing .ai-input-wrapper:focus-within {
+  border-color: #00B5B0;
+  box-shadow: 0 0 0 3px rgba(0, 181, 176, 0.1);
+}
+
+.ai-assistant.wellbeing .ai-typing-dot {
+  background: #55EFC4;
+}
+
+/* ---------- Mode Switcher Tabs ---------- */
+.ai-mode-tabs-container {
+  padding: var(--space-sm) var(--space-base);
+  background: var(--surface);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.ai-mode-tabs {
+  display: flex;
+  background: var(--surface-alt);
+  padding: 3px;
+  border-radius: var(--radius-sm);
+  position: relative;
+}
+
+.ai-mode-tab {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs);
+  padding: 8px var(--space-sm);
+  border: none;
+  background: none;
+  border-radius: calc(var(--radius-sm) - 2px);
+  font-size: var(--font-sm);
+  font-weight: 600;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.ai-mode-tab:hover {
+  color: var(--text);
+}
+
+.ai-mode-tab.active {
+  background: var(--surface);
+  color: var(--primary);
+  box-shadow: var(--shadow-sm);
+}
+
+.ai-assistant.wellbeing .ai-mode-tab.active {
+  color: #00B5B0;
+}
+
+/* ---------- Wellbeing Disclaimer Banner ---------- */
+.ai-wellbeing-disclaimer {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: var(--space-xs) var(--space-base);
+  background: rgba(0, 181, 176, 0.05);
+  border-bottom: 1px solid rgba(0, 181, 176, 0.08);
+  color: #008f8a;
+  font-size: 11px;
+  line-height: 1.4;
+}
+
+.disclaimer-info-icon {
+  flex-shrink: 0;
+  color: #00B5B0;
+}
+
+/* ---------- Mood Picker ---------- */
+.ai-mood-picker {
+  margin-top: var(--space-md);
+  padding-top: var(--space-md);
+  border-top: 1px dashed rgba(0, 181, 176, 0.2);
+}
+
+.ai-mood-picker-title {
+  font-size: var(--font-xs);
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: var(--space-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.ai-mood-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+}
+
+.ai-mood-btn {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: 6px 12px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.ai-mood-btn:hover {
+  border-color: #00B5B0;
+  background: rgba(0, 181, 176, 0.05);
+  transform: translateY(-1px);
+}
+
+.ai-mood-btn:active {
+  transform: scale(0.95);
+}
+
+.ai-mood-emoji {
+  font-size: 15px;
+}
+
+.ai-mood-label {
+  font-size: var(--font-sm);
+  font-weight: 500;
+  color: var(--text);
+}
+
+/* ---------- Empty Chat Layout ---------- */
+.ai-empty-chat {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--space-xl);
+  color: var(--text-secondary);
+  gap: var(--space-md);
+}
+
+.empty-chat-icon {
+  opacity: 0.25;
+  animation: float 4s ease-in-out infinite;
+}
+
+.ai-empty-chat p {
+  font-size: var(--font-sm);
+  max-width: 240px;
+  line-height: 1.5;
+}
+
+/* ---------- Chat Bubble Updates ---------- */
+.ai-message-bubble-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.typing-bubble {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-sm) var(--space-md) !important;
+}
+
+/* ---------- History Bottom Sheet Header Row ---------- */
+.ai-history-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-base);
+}
+
+.ai-history-close-btn {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-sm);
+  background: var(--surface-alt);
+  color: var(--text-secondary);
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.ai-history-close-btn:hover {
+  background: var(--surface-hover);
+  color: var(--text);
+}

@@ -145,6 +145,24 @@ export default function StudentHome() {
         </div>
       </section>
 
+      {/* -------- Mental Wellbeing Card -------- */}
+      <section className="sh-section sh-section--wellbeing sh-section--delay-1-alt">
+        <div className="sh-wellbeing-card">
+          <div className="sh-wellbeing__content">
+            <span className="sh-wellbeing__badge">Mind &amp; Wellbeing 🌿</span>
+            <h3>Feeling overwhelmed?</h3>
+            <p>Take a breath and chat privately with MindMentor AI about your stress, anxiety, or feelings.</p>
+            <button className="sh-wellbeing__btn" onClick={() => navigate('/ai-assistant?mode=wellbeing')}>
+              <span>Talk to MindMentor</span>
+              <ChevronRight size={16} />
+            </button>
+          </div>
+          <div className="sh-wellbeing__icon-bg">
+            <Bot size={80} />
+          </div>
+        </div>
+      </section>
+
       {/* -------- This Week's Goals -------- */}
       <section className="sh-section sh-section--delay-2">
         <div className="sh-section__header">
